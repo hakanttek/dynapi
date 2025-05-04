@@ -1,3 +1,54 @@
 {
-  "version": "1.0.0-beta.1"
+  "version": "1.0.0-beta.1",
+  "routes": {
+    "crud": "/api"
+  },
+  "entities": {
+    "customer": {
+      "props": [
+        {
+          "name": "id",
+          "type": "int"
+        },
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    },
+    "order": {
+      "props": [
+        {
+          "name": "id",
+          "type": "int"
+        },
+        {
+          "name": "customer_id",
+          "type": "int"
+        },
+        {
+          "name": "customer",
+          "type": "customer",
+          "foreign_key": "customer_id"
+        },
+        {
+          "name": "amount",
+          "type": "float"
+        }
+      ]
+    },
+    "product": {
+      "props": {
+        "id": {
+          "type": "int"
+        },
+        "name": {
+          "type": "string"
+        },
+        "price": {
+          "type": "float"
+        }
+      }
+    }
+  }
 }
