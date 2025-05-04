@@ -15,6 +15,9 @@ var http = require('http');
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
+if (process.env.NODE_ENV === 'development')
+  console.log(`http://localhost:${port} is listening...`);
+
 /**
  * Create HTTP server.
  */
